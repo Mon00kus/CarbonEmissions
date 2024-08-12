@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CarbonEmissions.Shared.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarbonEmissions.Shared.Entities
 {
@@ -27,7 +23,7 @@ namespace CarbonEmissions.Shared.Entities
         public DateTime EmissionDate { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        public string EmissionType { get; set; } = null!;
+        public EmissionType EmissionType { get; set; } 
 
         public Company? Company { get; set; }
     }

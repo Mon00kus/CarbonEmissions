@@ -17,13 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\Implementations\" />
-    <Folder Include="Repositories\Interfaces\" />
-    <Folder Include="UnitOfWork\Implementations\" />
-    <Folder Include="UnitOfWork\Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CarbonEmissions.Shared\CarbonEmissions.Shared.csproj" />
   </ItemGroup>
 
