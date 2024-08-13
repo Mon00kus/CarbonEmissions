@@ -26,7 +26,7 @@ namespace CarbonEmissions.Backend.Controllers
             return BadRequest();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("emissions/{id}")]
         public override async Task<IActionResult> GetAsync(int id)
         {
             var response = await _companiesUnitOfWork.GetAsync(id);
