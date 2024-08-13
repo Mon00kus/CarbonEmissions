@@ -1,5 +1,7 @@
 ﻿using CarbonEmissions.Backend.UnitOfWork.Interfaces;
 using CarbonEmissions.Shared.Entities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarbonEmissions.Backend.Controllers
@@ -15,6 +17,7 @@ namespace CarbonEmissions.Backend.Controllers
             _companiesUnitOfWork = companiesUnitOfWork;
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("all")]
         public override async Task<IActionResult> GetAsync()
         {
@@ -26,6 +29,7 @@ namespace CarbonEmissions.Backend.Controllers
             return BadRequest();
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("{id}")]
         public override async Task<IActionResult> GetAsync(int id)
         {

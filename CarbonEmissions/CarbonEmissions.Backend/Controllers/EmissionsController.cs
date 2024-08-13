@@ -2,6 +2,8 @@
 using CarbonEmissions.Shared.Dtos;
 using CarbonEmissions.Shared.Entities;
 using CarbonEmissions.Shared.Mappers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarbonEmissions.Backend.Controllers
@@ -17,6 +19,7 @@ namespace CarbonEmissions.Backend.Controllers
             _emissionsUnitOfWork = emissionsUnitOfWork;
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromQuery] CreateEmissionsDTO updateEmission)
         {

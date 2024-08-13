@@ -1,5 +1,7 @@
 ﻿using CarbonEmissions.Backend.UnitOfWork.Interfaces;
 using CarbonEmissions.Shared.Dtos;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarbonEmissions.Backend.Controllers
@@ -13,6 +15,7 @@ namespace CarbonEmissions.Backend.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("all")]
         public virtual async Task<IActionResult> GetAsync()
         {
@@ -24,6 +27,7 @@ namespace CarbonEmissions.Backend.Controllers
             return BadRequest();
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet("{id}")]
         public virtual async Task<IActionResult> GetAsync(int id)
         {
@@ -35,6 +39,7 @@ namespace CarbonEmissions.Backend.Controllers
             return NotFound();
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         public virtual async Task<IActionResult> GetAsync([FromQuery] PaginationDTO pagination)
         {
@@ -46,6 +51,7 @@ namespace CarbonEmissions.Backend.Controllers
             return BadRequest();
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         public virtual async Task<IActionResult> PostAsync(T model)
         {
@@ -57,6 +63,7 @@ namespace CarbonEmissions.Backend.Controllers
             return BadRequest(action.Message);
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut]
         public virtual async Task<IActionResult> PutAsync(T model)
         {
@@ -68,6 +75,7 @@ namespace CarbonEmissions.Backend.Controllers
             return BadRequest(action.Message);
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete("{id}")]
         public virtual async Task<IActionResult> DeleteAsync(int id)
         {
