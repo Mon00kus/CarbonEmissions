@@ -13,7 +13,7 @@ namespace CarbonEmissions.Backend.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpGet("full")]
+        [HttpGet("all")]
         public virtual async Task<IActionResult> GetAsync()
         {
             var action = await _unitOfWork.GetAsync();

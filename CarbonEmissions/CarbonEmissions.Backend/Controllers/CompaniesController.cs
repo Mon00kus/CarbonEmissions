@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CarbonEmissions.Backend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class CompaniesController : GenericController<Company>
     {
         private readonly ICompaniesUnitOfWork _companiesUnitOfWork;
@@ -15,7 +15,7 @@ namespace CarbonEmissions.Backend.Controllers
             _companiesUnitOfWork = companiesUnitOfWork;
         }
 
-        [HttpGet("full")]
+        [HttpGet("all")]
         public override async Task<IActionResult> GetAsync()
         {
             var response = await _companiesUnitOfWork.GetAsync();

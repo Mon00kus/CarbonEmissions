@@ -35,6 +35,10 @@ builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWor
 builder.Services.AddScoped<ICompaniesRepository, CompaniesRepository>();
 builder.Services.AddScoped<ICompaniesUnitOfWork, CompaniesUnitOfWork>();
 
+builder.Services.AddScoped<IEmissionsRepository, EmissionsRepository>();
+builder.Services.AddScoped<IEmissionsUnitOfWork, EmissionsUnitOfWork>();
+
+
 
 var app = builder.Build();
 
