@@ -30,7 +30,7 @@ namespace CarbonEmissions.Backend.Controllers
         }
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [HttpGet("{id}")]
+        [HttpGet("emissions/{id}")]
         public override async Task<IActionResult> GetAsync(int id)
         {
             var response = await _companiesUnitOfWork.GetAsync(id);
