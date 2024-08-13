@@ -5,16 +5,16 @@ namespace CarbonEmissions.Shared.Mappers
 {
     public static class EmissionsMapper
     {
-        public static Emission toEmissionsFromCreate(this CreateEmissionsDTO createEmissionsDTO, int companyId)
+        public static Emission toEmissionsFromCreate(this CreateEmissionsDTO createEmissionsDTO, int Id)
         {
             return new Emission
             {
-                Id = 1, 
+                Id = Id, 
                 Description = createEmissionsDTO.Description,
                 Quantity = createEmissionsDTO.Quantity,
                 EmissionDate = createEmissionsDTO.EmissionDate,
                 EmissionType = createEmissionsDTO.EmissionType,
-                CompanyId = companyId
+                CompanyId = createEmissionsDTO.CompanyId
             };
         }
     }

@@ -1,6 +1,5 @@
 ﻿using CarbonEmissions.Backend.Data;
 using CarbonEmissions.Backend.Repositories.Interfaces;
-using CarbonEmissions.Shared.Dtos;
 using CarbonEmissions.Shared.Entities;
 using CarbonEmissions.Shared.Responses;
 using Microsoft.EntityFrameworkCore;
@@ -62,5 +61,22 @@ namespace CarbonEmissions.Backend.Repositories.Implementations
                 Result = emission
             };
         }        
+        public override async Task<ActionResponse<Emission>> UpdateAsync(Emission emission)
+        {
+            try
+            {                
+                _context.Update(emission);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw (ex.InnerException!);
+            }
+            return new ActionResponse<Emission>
+            {
+                WasSuccess = true,
+                Result = emission
+            };
+        }
     }
 }

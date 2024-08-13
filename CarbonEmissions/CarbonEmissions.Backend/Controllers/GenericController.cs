@@ -49,7 +49,7 @@ namespace CarbonEmissions.Backend.Controllers
         [HttpPost]
         public virtual async Task<IActionResult> PostAsync(T model)
         {
-            var action = await _unitOfWork.AddAsync(model);
+            var action = await _unitOfWork.UpdateAsync(model);
             if (action.WasSuccess)
             {
                 return Ok(action.Result);

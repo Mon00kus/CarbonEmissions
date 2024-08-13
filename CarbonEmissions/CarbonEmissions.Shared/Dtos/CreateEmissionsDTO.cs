@@ -22,5 +22,8 @@ namespace CarbonEmissions.Shared.Dtos
 
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public EmissionType EmissionType { get; set; }
+
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
+        public int CompanyId { get; set; }
     }
 }

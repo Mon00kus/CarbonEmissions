@@ -11,5 +11,8 @@ namespace CarbonEmissions.Backend.UnitOfWork.Interfaces
         Task<ActionResponse<IEnumerable<Emission>>> GetAsync();
 
         Task<ActionResponse<Emission>> AddAsync(Emission emission);
+
+        Task<ActionResponse<Emission>> UpdateAsync(Emission emission);
+
     }
 }
