@@ -7,3 +7,7 @@ options.UseMySql(builder.Configuration.GetConnectionString("localConnection"), n
 
 user - pulpo 
 passw - 123
+
+
+In AppSettings is the ConnectionString this line
+"localConnection": "Server=localhost;Database=CarbonEmissions;Uid=root;Pwd=123;Port=3306"
