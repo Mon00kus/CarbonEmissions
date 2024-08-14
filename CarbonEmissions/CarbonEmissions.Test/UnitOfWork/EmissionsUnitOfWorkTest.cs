@@ -9,7 +9,7 @@ using CarbonEmissions.Backend.Repositories.Interfaces;
 using CarbonEmissions.Backend.UnitOfWork.Implementations;
 
 
-namespace CarbonEmissions.Test.UnitOfWprk
+namespace CarbonEmissions.Test.UnitOfWork
 {
     [TestClass]
     public class EmissionsUnitOfWorkTest
