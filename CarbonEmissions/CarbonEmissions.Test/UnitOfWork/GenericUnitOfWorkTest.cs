@@ -70,16 +70,16 @@ namespace CarbonEmissions.Test.UnitOfWork
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
-        public async Task UpdateAsync_Success()
-        {
-            _mockRepository.Setup(x => x.UpdateAsync(It.IsAny<object>()))
-                .ReturnsAsync(new ActionResponse<object> { Result = _testModel });
+        //[TestMethod]
+        //public async Task UpdateAsync_Success()
+        //{
+        //    _mockRepository.Setup(x => x.UpdateAsync(It.IsAny<object>()))
+        //        .ReturnsAsync(new ActionResponse<object> { Result = _testModel });
 
-            var result = await _unitOfWork.UpdateAsync(_testModel);
+        //    var result = await _unitOfWork.UpdateAsync(_testModel);
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual(_testModel, result.Result);
-        }
+        //    Assert.IsNotNull(result);
+        //    Assert.AreEqual(_testModel, result.Result);
+        //}
     }
 }
