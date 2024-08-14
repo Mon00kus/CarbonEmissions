@@ -1,11 +1,5 @@
-﻿using CarbonEmissions.Backend.Repositories.Interfaces;
-using CarbonEmissions.Backend.UnitOfWork.Interfaces;
+﻿using CarbonEmissions.Backend.UnitOfWork.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarbonEmissions.Test.Controllers
 {

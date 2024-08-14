@@ -1,6 +1,7 @@
 ﻿using CarbonEmissions.Backend.Data;
 using CarbonEmissions.Backend.Repositories.Implementations;
 using CarbonEmissions.Shared.Entities;
+using CarbonEmissions.Shared.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarbonEmissions.Test.Repositories
@@ -19,9 +20,9 @@ namespace CarbonEmissions.Test.Repositories
 
             _context.Emissions.AddRange(new List<Emission>
             {
-               new Emission {Id = 1, Description="Exxon mobile llc", Quantity= (decimal)8896.26, EmissionDate= DateTime.Now, EmissionType= Shared.Enums.EmissionType.DirectEmissions, CompanyId= 2 },
-               new Emission {Id = 2, Description="Texaco Compamies llc", Quantity= (decimal)8896.76, EmissionDate= DateTime.Now, EmissionType= Shared.Enums.EmissionType.DirectEmissions, CompanyId= 1 },
-               new Emission {Id = 3, Description="Haliburton XXX", Quantity= (decimal)3226.92, EmissionDate= DateTime.Now, EmissionType= Shared.Enums.EmissionType.DirectEmissions, CompanyId= 2 }
+               new Emission {Id = 1, Description="Exxon mobile llc", Quantity= (decimal)8896.26, EmissionDate= DateTime.Now, EmissionType= EmissionType.DirectEmissions, CompanyId= 2 },
+               new Emission {Id = 2, Description="Texaco Compamies llc", Quantity= (decimal)8896.76, EmissionDate= DateTime.Now, EmissionType= EmissionType.DirectEmissions, CompanyId= 1 },
+               new Emission {Id = 3, Description="Haliburton XXX", Quantity= (decimal)3226.92, EmissionDate= DateTime.Now, EmissionType= EmissionType.DirectEmissions, CompanyId= 2 }
             });
 
             _context.SaveChangesAsync();
